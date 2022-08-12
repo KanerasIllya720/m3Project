@@ -1,0 +1,89 @@
+body{
+    background-color: snow;
+}
+
+.box{
+    position: absolute;
+    border: 4px solid #333543;
+    transform: translate(-50%, -50%);
+    overflow-x: hidden;
+}.box.box1{
+    width: 35%;
+    height: 25%;
+    top: 30%;
+    left: 50%;
+    overflow: hidden;
+}.box.box2{
+    white-space: nowrap;
+    overflow-y: scroll;
+    width: 35%;
+    height: 30%;
+    top: 70%;
+    left: 50%;
+    scroll-behavior: smooth;
+}.box.box2::-webkit-scrollbar{
+    width: 7px;
+}.box.box2::-webkit-scrollbar-thumb{
+    border-radius: 20%;
+    background-color: gray;
+}
+
+.txt{
+    position: absolute;
+    font-family: "여기어때 잘난체";
+    transform: translate(-50%, -50%);
+}.txt.mainText1{
+    font-size: 250%;
+    top: 13%;
+    left: 50%;
+}.txt.mainText2{
+    font-size: 250%;
+    top: 50%;
+    left: 50%;
+}.txt.subText1{
+    font-size: 1050%;
+    color: red;
+    top: 50%;
+    left: 50%;
+}
+.tableCSS{
+    position: absolute;
+    margin-left: 0.8%;
+    width: 100%;
+    transform: translate(-50%,0%);
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 120%;
+    top: 0%;
+    left: 50%;
+}.tableCSS tr:nth-child(1){
+    border-bottom: 1px solid black;
+}.tableCSS th:nth-child(1){
+    width: 50%;
+}.tableCSS th:nth-child(n=2):nth-child(-n=3){
+    width: 25%
+}.tableCSS th{
+    font-family: "여기어때 잘난체";
+    padding: 2%;
+}.tableCSS td{
+    font-family: "여기어때 잘난체";
+}
+.buttonCSS{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    width: 8%;
+    height: 6%;
+    font-family: "여기어때 잘난체";
+    font-size: 120%;
+    border: 2px solid black;
+    background-color: whitesmoke;
+}.buttonCSS:active{
+    background-color: gray;
+    color: snow;
+}.buttonCSS.btn1{
+    top: 93%;
+    left: 44%;
+}.buttonCSS.btn2{
+    top: 93%;
+    left: 56%;
+}

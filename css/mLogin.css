@@ -1,0 +1,71 @@
+body{
+    background-color: snow;
+    overflow-x: hidden;
+}
+.mainText{
+    position: absolute;
+    font-size: 275%;
+    font-weight: bold;
+    font-family: "여기어때 잘난체";
+    color: blueviolet;
+    top: -13%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.editText1{
+    position: absolute;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    width: 70%;
+    border: 1.5px solid darkblue;
+    border-radius: 0%;
+    transform: translate(-50%, -50%);
+}.editText1::placeholder{
+    color: darkcyan;
+
+}.editText1.text1{
+    top: 20%;
+    left: 50%;
+}.editText1.text2{
+    top: 45%;
+    left: 50%;
+}
+
+.button{
+    position: absolute;
+    border: 1px solid darkblue;
+    color:darkblue;
+    background-color: white;
+    width:90px;
+    height:45px;
+    text-align: center;
+    position: absolute;
+    margin: 6px;
+    font-size: 17px;
+    font-family: 휴먼엑스포;  
+    transform: translate(-50%, -50%);  
+}.button:active{
+    background-color: tomato;
+}.button.btn1{
+    left: 34%;
+    top: 76%;
+}.button.btn2{
+    left: 66%;
+    top: 76%;
+}
+
+.box1{
+    position: absolute;
+    width: 30%;
+    height: 33%;
+    border-top: 2px solid blueviolet;
+    border-left: 2px solid blueviolet;
+    border-bottom: 2px solid darkblue;
+    border-right: 2px solid darkblue;
+    transform: translate(-50%, 0%);
+    top: 15%;
+    left: 50%;
+    background-color: white;
+}

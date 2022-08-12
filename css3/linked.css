@@ -1,0 +1,6 @@
+@charset "utf-8";
+p {display:block; font-size:20pt;
+color:#008000; /* 블록 구조, 글자
+크기 : 20pt, 녹색 글씨 */
+text-align:right; border:5px double
+red;}

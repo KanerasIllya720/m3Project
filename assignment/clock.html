@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <script src = "./clock.js"></script>
+        <meta charset="utf-8"/> 
+        <style>
+            body{
+                background-color: blanchedalmond;
+            }
+            .clockMain{
+                position: absolute;
+                font-family: tahoma;
+                font-size: 20px;
+                width: 400px;
+                height: 100px;
+                left: 50%;
+                top: 40%;
+                z-index: 1;
+                border: 2px solid black;
+                background-color: white;
+                transform: translate(-50%, -50%);
+            }
+            .clockOne{
+                position: absolute;
+                font-family: tahoma;
+                width: 400px;
+                font-size: 20px;
+                height: 23px;
+                z-index: 1;
+                text-align: center;
+                color: white;
+                background-color: gray;
+                border-bottom: 2px solid black;
+            }
+            .clockTwo{
+                position: absolute;
+                font-family: tahoma;
+                width: 400px;
+                height: 60px;
+                font-size: 60px;
+                z-index: 1;
+                color: red;
+                font-weight: bold;
+                top:20px;
+                transform: translate(7%, 7%);
+            }.txt1{
+                position:absolute;
+                font-family: tahoma;
+                font-size: 55px;
+                font-weight: bold;
+                left: 50%;
+                top: 28%;
+                text-align: center;
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    </head>
+    <body>
+        <span class="txt1">현재 시간</span>
+        <div class = "clockMain">
+            <div id="day" class="clockOne"></div>
+            <div id="time" class="clockTwo"></div>
+        </div>
+    </body>
+</html>

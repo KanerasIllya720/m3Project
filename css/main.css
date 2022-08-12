@@ -1,0 +1,96 @@
+body{
+    background-color: yellow;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 1280px;
+    height: 3000px;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}body::-webkit-scrollbar{
+    width: 7px;
+}body::-webkit-scrollbar-thumb{
+    background-color: gray;
+}body::-webkit-scrollbar-track{
+    background-color: pink;
+}
+
+.box{
+    position: absolute;
+    background-color: white;
+    width: 80%;
+    height: 180%;
+    left: 50%;
+    top: 35%;
+    transform:translate(-50%, 0);
+}.box.box2{
+    width: 40%;
+    height: 25%;
+    left: 25%;
+    top: 20%;
+    background-color: snow;
+    transform:translate(-50%, -50%);
+}.box.box2 img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 60%;
+    transform:translate(-50%, -50%);
+    -webkit-user-drag: none;
+}.box.box2:active{
+    background-color: gray;  
+}.box.box2.subB1{
+    left: 50%;
+    cursor: hand; /* pointer - normal */
+}.box.box2.subB1:active{
+    background-color: gray;
+}
+
+.txt{
+    position: absolute;
+    font-family: "여기어때 잘난체";
+    transform:translate(-50%, -50%);
+}.txt.txt1{
+    top: 15%;
+    left: 50%;
+    font-size: 500%; 
+}.txt.txt2{
+    font-size: 180%;
+    top: 90%;
+    left: 50%;
+    color: red;
+}
+
+.txt_hello{
+    position: absolute;
+    font-weight: bold;
+    font-size: 110%;
+    font-style: normal;
+    color: black;
+    text-decoration: none;
+    top: 2%;
+    left: 75%;
+}
+
+a{ 
+    position: absolute;
+    font-weight: bold;
+    font-size: 110%;
+    font-style: normal;
+    color: rgb(61, 61, 194);
+    text-decoration: none;
+}a.ah1{
+    top: 2%;
+    left: 87%;
+}a.ah2{
+    top: 2%;
+    left: 93%;
+}a.ah3{
+    top: 2%;
+    left: 94%;
+}a.ah4{
+    top: 2%;
+    left: 89%;
+}

@@ -1,0 +1,601 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .txt1{
+                position:absolute;
+                top: 25%;
+                left: 50%;
+                font-size: 50px;
+                font-weight: bold;
+                font-family: "여기어때 잘난체";
+                color: red;
+                transform: translate(-50%, -50%);
+            }
+            .table{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                border-collapse: collapse;
+                border: 2px solid black;
+                transform: translate(-50%, -50%);
+            }.table td{
+                padding: 13px;
+                padding-top: 18px;
+                padding-bottom: 18px;
+                text-align: center;
+                font-weight: bold;
+                font-family: "여기어때 잘난체";
+            }.table th{
+                padding: 15px;
+                font-family: "여기어때 잘난체";
+                font-size: 20px;
+                text-align: center;
+                border-bottom: 1px solid gray;
+            }.table tr:nth-child(odd){
+                background-color: snow;
+            }.table tr:nth-child(even){
+                background-color: aqua;
+            }.table th:nth-child(1){
+                color: red;
+            }
+        </style>
+        <script>
+            /*
+            var point;
+            point = prompt("포인트 입력", "포인트를 입력하세요");
+            if(point >= 2000) alert("경품 대상자입니다")
+            else alert("경품 지급 대상자가 아닙니다")
+            
+            var s_code = prompt("성별입력", "1 or 2");
+            switch(s_code){
+                case "1": alert("man"); break;
+                case "2": alert("woman"); break;
+                default: alert("error");
+            }
+
+            var n = 1, sum = 0;
+            while(n <= 10){
+                sum = sum + n;
+                n++;
+            }
+            alert(sum);  
+
+            var n, sum = 0;
+            for(n = 1; n < 11; n++){
+                sum += n;
+            }
+            alert(sum);
+            
+            for(var i = 1; i <= 10; i++){
+                if(i > 5) break; 
+                document.write(i, "<br>");
+            }
+            
+            for(var i = 1; i <= 10; i++){
+                if(i % 2 == 0) continue;
+                document.write(i, "<br>");
+            }
+            
+            for(var i = 1; i < 10; i++){
+                document.write("<h1>" + i + "단</h1>")
+                for(var k = 1; k < 10; k++){
+                    document.write(i + "x" + k + "=" + i * k, "<br/>")
+                }
+            }
+            var num = 1;
+            var t = '<table border="1">';
+            for(var i = 1; i < 6; i++){
+                t += "<tr>";
+                for(var j = 1; j < 6; j++){
+                    t += "<td>" + num + "</td>";
+                    num++;
+                }
+                t += "</tr>";
+            }
+            t += "</table>";
+            document.write(t);
+            
+            var year = prompt("현재는 몇 년이니까?", "0000");
+            var mon = prompt("현재 몇 월입니까?", "00");
+            var last_day;
+            switch(mon){
+                case "1": last_day = 31; break;
+                case "2": if((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) last_day = 29; else last_day = 28; break;
+                case "3": last_day = 31; break;
+                case "4": last_day = 30; break;
+                case "5": last_day = 31; break;
+                case "6": last_day = 30; break;
+                case "7": last_day = 31; break;
+                case "8": last_day = 31; break;
+                case "9": last_day = 30; break;
+                case "10": last_day = 31; break;
+                case "11": last_day = 30; break;
+                case "12": last_day = 31; break;
+                default: last_day = "error";
+            }
+            for(var i = 1; i <= last_day; i++){
+                document.write(i + " ");
+            }
+            
+            function prt(){
+                document.write("이름 :" + this.name + "<p/>");
+                document.write("나이 :" + this.age + "<p/>");
+            }
+            
+            function student(name, age){
+                this.name = name;
+                this.age = age;
+                this.st_method = prt;
+            }
+            student1 = new student("진달래", 19);
+            student1.st_method();
+            
+            var student1 = {
+                name: "진달래",
+                age: 19,
+                st_method: function()
+
+                document.write("이름 :" + this.name + "<p/>");
+                document.write("나이 :" + this.age + "<p/>");
+            };
+            student1.st_method();
+            
+            function display_stu(){
+                document.write("이름: " + this.name + "<br/>");
+                document.write("나이: " + this.age + "<br/>");
+            }
+            function student(name, age){
+                this.name = prompt("이름을 입력하세요");
+                this.age = prompt("나이를 입력하세요");
+                this.display_stu = display_stu;
+            }
+            student3 = new student;
+            student3.display_stu();
+            
+            var kor = [81, 88, 92];
+            var math = [86, 100, 96];
+            var eng = [87, 94, 98];
+            var sum_kor = 0, sum_math = 0, sum_eng = 0;
+            for(var i in kor){
+                sum_kor += kor[i];
+            }
+            for(var i in math){
+                sum_math += math[i];
+            }
+            for(var i in eng){
+                sum_eng += eng[i];
+            }
+            document.write("국어 평균: " + (sum_kor/3) + "<br/>");
+            document.write("수학 평균: " + (sum_math/3) + "<br/>");
+            document.write("영어 평균: " + (sum_eng/3) + "<br/>");
+
+            var t = new Date();
+            var year = t.getFullYear();
+            var date2 = new Date(year,11,31);
+            var diffDate = date2-t;
+            var result = Math.ceil(diffDate/(1000*60*60*24));
+            document.write("현재일로부터 올해 말일까지는" + result + "일 남았습니다.");
+            
+            var num = 2.1234;
+            var a = Math.max(10, 5, 8, 30);
+            var b = Math.min(10, 5, 8, 3);
+            var c = Math.round(num);
+            var d = Math.floor(num);
+            var e = Math.ceil(num);
+            var f = Math.random();
+            var g = Math.PI;
+            var h = Math.floor(Math.random() * (10 - 1 + 1)) + 1; // 0부터 10 까지 시작 값:1
+
+            document.write(a, "<br/>");
+            document.write(b, "<br/>");
+            document.write(c, "<br/>");
+            document.write(d, "<br/>");
+            document.write(e, "<br/>");
+            document.write(f, "<br/>");
+            document.write(g, "<br/>");
+            document.write(h, "<br/>");
+            
+            var num = ["사당", "교대", "방배", "강남"];
+            document.write(num, "<br/>");
+            document.write(typeof num, "<br/>");
+            document.write(num.join("-"),"<br/>");
+            document.write(typeof num.join("-"), "<br/>")
+            document.write(num.reverse(), "<br/>");
+            document.write(num.sort(), "<br/>");
+
+            var GreenLine = ["사당", "교대", "방배", "강남"];
+            var YellowLine = ["미금","정자","모란","수서"];
+            GreenLine.splice(2, 1, "서초", "역삼");
+            document.write(GreenLine, "<br/>");
+            document.write(GreenLine.slice(1,3), "<br/>");
+            
+            var GreenLine = ["사당", "교대", "방배", "강남"];
+            var YellowLine = ["미금","정자","모란","수서"];
+            var twoLine = GreenLine.concat(YellowLine);
+            document.write(twoLine,"<br/>");
+            GreenLine.pop();
+            document.write(GreenLine, "<br/>");
+            GreenLine.push("삼성");
+            document.write(GreenLine, "<br/>");
+            GreenLine.shift();
+            document.write(GreenLine,"<br/>");
+            GreenLine.unshift("신도림");
+            document.write(GreenLine,"<br/>");
+            
+           var content = prompt("내용을 입력하세요", "6글자 이상 입력");
+           if(content.length < 6){
+               alert("6글자 이상으로 입력하세요");
+           }else{
+               alert("글자수는 " + content.length +"자 입니다.");
+           }
+           
+          var t = "Hello Thank you good luck to you";
+          document.write(t.charAt(16),"<br/>");
+          document.write(t.indexOf("you"),"<br/>");
+          document.write(t.indexOf("you", 16),"<br/>");
+          document.write(t.lastIndexOf("you"),"<br/>");
+          document.write(t.lastIndexOf("you", 25),"<br/>");
+          document.write(t.match("luck"),"<br/>");
+          document.write(t.search("you"),"<br/>");
+          document.write(t.substr(21,4),"<br/>");
+          document.write(t.substring(6, 12),"<br/>");
+          document.write(t.replace("you", "me"),"<br/>");
+          document.write(t.toLowerCase(),"<br/>");
+          document.write(t.toUpperCase(),"<br/>");
+          document.write(t.length,"<br/>");
+          var s = t.split("");
+          document.write(s[0],"<br/>");
+          document.write(s[4],"<br/>");
+          var str = "A";
+          var t = str.charCodeAt(0);
+          document.write(t,"<br/>");
+          document.write(String.fromCharCode(65),"<br/>");
+          
+            var userEmail = prompt("당신의 이메일 주소는?","");
+            var arrUrl = [".co.kr",".com",".net",".or.kr",".go.kr"];
+            var check1 = false;
+            var check2 = false;
+            if(userEmail.search("@") > 0){
+                check1 = true;
+            }
+            for(var i = 0; i < arrUrl.length; i++){
+                if(userEmail.lastIndexOf(arrUrl[i]) > 0){
+                    check2 = true;
+                }
+            }
+            if(check1 && check2){
+                document.write(userEmail);
+            }else{
+                alert("이메일 형식이 잘못되었습니다.");
+            }
+            
+            var whDate = prompt("년도와 달을 입력하세요 \n ex)2020 01","2020 01");
+            var date = new Date(whDate);
+            var y = date.getFullYear();
+            var m = date.getMonth();
+            var d = date.getDate();
+            var theDate = new Date(y,m,1);
+            var theDay = theDate.getDay();
+            var last = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            if ((y % 4 == 0) && (y % 100 != 0) || (y % 400 == 0)) last[1] = 29;
+            var lastDate = last[m];
+            var row = Math.ceil((lastDate + theDay) / 7);
+            document.write("<span class='txt1'>" + y + "년" + (m + 1) + "월" + "</span>");
+            var calendar = "<table class = 'table'>";
+            calendar += "<tr>";
+            calendar += "<th>일</th>";
+            calendar += "<th>월</th>";
+            calendar += "<th>화</th>";
+            calendar += "<th>수</th>";
+            calendar += "<th>목</th>";
+            calendar += "<th>금</th>";
+            calendar += "<th>토</th>";
+            calendar += "</tr>";
+            var dNum = 1;
+            for(var i = 0; i < row; i++){
+                calendar += "<tr>";
+                for(var j = 0; j < 7; j++){
+                    if((i == 0 && j < theDay) || (dNum > lastDate)){
+                        calendar += "<td> &nbsp; </td>";
+                    }else{
+                        calendar += "<td>" + dNum + "</td>";
+                        dNum++;
+                    }
+                }
+                calendar += "</tr>";
+            }
+            calendar += "</table>";
+            document.write(calendar);   
+           
+            function popup(){
+                open("https://www.naver.com/","네이버분신술", "width = 200, height = 170, left = 50, top = 10, scrollbars = no, toolbars = no, location = no");    
+            }
+            var pop2 = open("","13","width = 100, height = 100");  
+            
+            var myWindow = null;
+            function openWin(){
+                if(myWindow == null){
+                    myWindow = open('','','width=200, height=100, left=300');
+                    myWindow.document.write("<p>새 창 입니다</p>");
+                }if(!myWindow.closed){
+                    myWindow.close();
+                    myWindow = open('','','width=200, height=100, left=300');
+                    myWindow.document.write("<p>새 창 입니다</p>");
+                }
+            }
+            function moveWin(){
+                myWindow.moveTo(150,150);
+                myWindow.focus();
+            }
+            function resizeWin(){
+                myWindow.resizeTo(200,300);
+                myWindow.focus();   
+            }
+            
+            var i = 0;
+            var auto = setInterval("console.log(++i);",500);
+            
+            document.write("width:" + screen.width, "<br/>");
+            document.write("height:" + screen.height, "<br/>");
+            document.write("availWidth:" + screen.availWidth, "<br/>");
+            document.write("availHeight:" + screen.availHeight, "<br/>");
+            document.write("colorDepth:" + screen.colorDepth, "<br/>");
+            
+            document.write("href:" + location.href, "<br/>");
+            document.write("hash:" + location.hash, "<br/>");
+            document.write("hostname:" + location.hostname, "<br/>");
+            document.write("host:" + location.host, "<br/>");
+            document.write("protocol:" + location.protocol, "<br/>");
+            
+            document.write("appCodeName:" + navigator.appCodeName, "<br/>");
+            document.write("appName:" + navigator.appName, "<br/>");
+            document.write("appVersion:" + navigator.appVersion, "<br/>");
+            document.write("language:" + navigator.language, "<br/>");
+            document.write("product:" + navigator.product, "<br/>");
+            document.write("platform:" + navigator.platform, "<br/>");
+            document.write("userAgent:" + navigator.userAgent, "<br/>");
+            
+            function info1(){
+                var os = navigator.userAgent.toLowerCase();
+                var info_wrap=document.getElementById("info_wrap");
+                if(os.indexOf('windows') >= 0){
+                    info_wrap.innerHTML = "윈도우";
+                }else if(os.indexOf('iphone') >= 0){
+                    info_wrap.innerHTML = "아이폰";
+                }else if(os.indexOf('android') >= 0){
+                    info_wrap.innerHTML = "안드로이드";
+                }
+                setTimeout("info_wrap.innerHTML=", 500);
+            }
+            function info2(){
+                var sc_w = screen.width;
+                var sc_h = screen.height;
+                var info_wrao = document.getElementById("info_wrap");
+                info_wrap.innerHTML = sc_w + "x" + sc_h;
+                setTimeout("info_wrap.innerHTML=", 500);
+            }
+            
+            function btn_Function(){
+                var btn = document.createElement("Button");
+                var t = document.createTextNode("생성된 버튼");
+                btn.appendChild(t);
+                document.body.appendChild(btn);
+            }
+            function hello(){
+                var header = document.createElement("h1");
+                var textNode = document.createTextNode("안녕하세요!");
+                header.appendChild(textNode);
+                document.body.appendChild(header);
+            }
+            
+            window.onload = function(){
+                document.getElementsByTagName("h1")[0].style.color="#f  00";
+                var myList = document.getElementById("food1").getElementsByTagName("li").item(1);
+                myList.style.backgroundColor = "red";
+                document.getElementById("kimchi").firstChild.style.color="#00ff00";
+                if(document.getElementsByTagName("p").length > 0){
+                    var p = document.getElementsByTagName("p")[2];
+                    p.style.backgroundColor = "yellow";
+                }
+            }
+            
+            function txt_function(){
+                var input_txt = document.getElementById("input");
+                alert(input_txt.value);
+            }
+            
+            window.onload=function(){
+                var head = document.getElementById("h");
+                head.style.color="red";
+                head.style.backgroundColor="#ff0";
+                head.style.removeProperty("color");
+                var a = head.getAttribute("style");
+                head.style.setAttribute("textAlign", "center");
+                var abc = document.getElementById('abc');
+                abc.setAttribute("href", "https://naver.com");
+            }
+            
+            window.onload=function(){
+                var a = document.getElementById('m').nodeType;
+                document.getElementById("m").firstChild.nodeType;
+                document.getElementById("m").getAttributeNode("href").nodeType;
+            }
+            
+            document.getElementById("wrap").firstChild.nodeType;
+            var p = document.getElementsByTagName("p")[1];
+            p.nextSibling.style.backgroundColor="yellow";
+            
+            document.getElementById("wrap").children[0].style.color="red";
+            var p = document.getElementsByTagName("p")[1];
+            var nextObj = p.nextSibling;
+            while(nextObj.nodeType != 1){
+                nextObj=nextObj.nextSibling;
+            }
+            nextObj.style.backgroundColor="yellow";
+            
+            document.querySelector("#header");
+            document.querySelector(".a");
+            document.querySelectorAll(".a,.b");
+            document.querySelectorAll("p[class]");
+            */
+            window.onload = function(){
+                document.getElementById("selDan").addEventListener("change", process, false);
+                document.getElementById("del").addEventListener("click", delprocess, false);
+            }
+            function process(){
+                var sel = Number(frm.sel.options[frm.sel.selectedIndex].value);
+                var col = addCol(sel + "단");
+                var row = document.createElement("tr");
+                row.appendChild(col);
+                document.getElementById("myTbody").appendChild(row);
+                for(var i = 1; i < 10; i++){
+                    addRow(sel, i);
+                }
+            }
+            function addRow(sel, i){
+                var row = document.createElement("tr");
+                var col = addCol(sel + " * " + i + " = " + sel * i);
+                row.appendChild(col);
+                document.getElementById("myTbody").appendChild(row);
+            }
+            function addCol(data){
+                var col = document.createElement("td");
+                var text = document.createTextNode(data);
+                col.appendChild(text);
+                return col;
+            }
+            function delprocess(){
+                var myTbody = document.getElementById("myTbody");
+                while(myTbody.childNodes.length > 0) myTbody.removeChild(myTbody.childNodes[0]);
+            }
+        </script>
+    </head>
+    <!--
+    <body onload = "popup()"></body>
+    <body>
+        <input type = "button" value = "창 열기" onclick="openWin()"/>
+        <input type = "button" value = "창 이동" onclick="moveWin()"/>
+        <input type = "button" value = "창 사이 변경" onclick="resizeWin()"/>
+    </body>
+     
+    <body>
+        <input type = "button" value="정지버튼" onclick="clearInterval(auto)"/>
+    </body>
+    
+    <h1>운영체제 및 스크린 정보</h1>
+    <p id = "info_wrap"></p>
+    <button onclick = "info1()">운영체제 정보</button><br/>
+    <button onclick= "info2()">스크린 정보</button><br/>
+    
+    <body>
+        버튼 만들기 : 
+        <button onclick = "btn_Function()">버튼 만들기</button>
+        <p></p>
+        인사말 나타내기 :
+        <button onclick = "hello()">HELLO!</button>
+        <hr/>
+    </body>
+    
+    <body>
+        <script>
+            function change(){
+                element = document.getElementById("my");
+                if(element.src.match("1.jpg")) element.src = "2.jpg";
+                else element.src = "1.jpg";
+            }
+        </script>
+        <img id = "my" onclick="change()" border="0" src="2.jpg" width="100" height="180">
+        <p>Click to turn on/off the light</p>
+    </body>
+
+    <body>
+        <h1>선호하는 음식</h1>
+        <div id = "food1">
+            <h2>음식</h2>
+            <ol>
+                <li>김치</li>
+                <div id = "kimchi">
+                    <p>김치찌개</p>
+                    <p>김치만두</p>
+                    <p>김치볶음밥</p>
+                </div>
+                <li>불고기</li>
+                <li>비빔밥</li>
+            </ol>
+        </div>
+    </body>
+
+    <body>
+        <input id = "input" type = "text" value = "텍스트를 입력하세요"/>
+        <button onclick="txt_function()">결과보기</button>
+    </body>
+
+    <form name = "log" method = "post" action="#">
+        <p>
+            <label>아이디</label>
+            <input type = "text" name="user_name" id="user">
+        </p>
+        <input type = "submit" value="login"/>
+    </form>
+    <script>
+        document.log.onsubmit=function(){
+            var id_v = document.log.user_name.value;
+            alert(id_v);
+        }
+    </script>
+    
+    <body>
+        <h1 id="h">문서객체모델</h1>
+        <a id="abc" href="#">링크</a>
+    </body>
+
+    <body>
+        <a href="https://www.nvaer.com" id="m">naver</a>
+    </body>
+    
+    <body>
+        <div id = "wrap">
+            <p class="a">내용1</p>
+            <p class="b">내용2</p>
+            <p class="a">내용3</p>
+            <p class="b">내용4</p>
+        </div>
+    </body>
+
+    <body>
+        <div id = "header">
+            <h1>Selector사용</h1>
+        </div>
+        <p class="a">내용1</p>
+        <p class="b">내용2</p>
+        <p class="a">내용3</p>
+        <p class="b">내용4</p>
+    </body>
+    -->
+    <body>
+        <h2>구구단 출력</h2>
+        <form action="#" name="frm">
+            단:
+            <select name="sel" id="selDan">
+                <option value="2">2단</option>
+                <option value="3">3단</option>
+                <option value="4">4단</option>
+                <option value="5">5단</option>
+                <option value="6">6단</option>
+                <option value="7">7단</option>
+                <option value="8">8단</option>
+                <option value="9">9단</option>
+            </select>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <input type="button" value="삭제" id="del">
+        </form>
+        <br>
+        <table id="myTable">
+            <tbody id = "myTbody"></tbody>
+        </table>
+    </body>
+</html>
