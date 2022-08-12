@@ -1,0 +1,26 @@
+<html>
+    <head> 
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+        <meta charset='utf-8'>
+        <meta charset="utf-8"/> 
+        <link rel="stylesheet" href="./css/mLogin.css"/>
+    </head>
+    <body>
+        <div class="box1">
+            <h1 class="mainText">Meister Pharmacy</h1>
+            <form action="mLogin.php" method="post">
+                <input type="text" name="ID" placeholder="ID", class="editText1 text1"/> <br/>
+                <input type="password" name="Password" placeholder="PASSWORD", class="editText1 text2"/>   
+                <br/>
+                <input type="submit" value="로그인" class="button btn1" /><br/>
+                <hr/>
+                <button type="button" onclick="location.href='aRegister.html'" class="button btn2">회원가입</button>  
+                <input type="hidden" value="L" name='Log'/>
+            </form>
+            <footer>
+                <p>Copyright © 2020 JBTS 3rd Grade</p>
+            </footer>
+        </div>
+    </body>
+</html>

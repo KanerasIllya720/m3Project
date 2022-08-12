@@ -1,0 +1,76 @@
+h3{
+    font-family: "Nanum Gothic";
+    font-size: 40px;
+    text-align: left;
+    margin-left: 45px;
+    color: darkturquoise;
+    font-weight: 800;
+}
+
+body form ul{
+    border: darkturquoise 2px solid;
+    background-color: darkturquoise;
+    font-family: "Nanum Gothic";
+    font-size: 16px;
+    font-weight: 600;
+    width: auto;
+    color: white;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+body footer div p{
+    text-align: center;
+    font-family: "Nanum Gothic";
+}
+
+body form select{
+    width: 200px;
+    padding: .8em .5em;
+    border: 1px solid #999;
+    background-color: turquoise;
+    font-family: Arial;
+    background: url('arrow.jpg') no-repeat 95% 50%;
+    border-radius: 0px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: "Nanum Gothic";
+    margin-left: 2%;
+}
+
+body form select::-ms-expand {
+    display: none;
+}
+
+body form a{
+    display: block;
+    float: right;
+    width: 80px;
+    margin: 10px;
+    padding: 4px;
+    text-align: center;
+    font-family: "Nanum Gothic" 800;
+    border: darkturquoise;
+    display: block;
+    font-size: 17px;
+    border-top: turquoise;
+    border-bottom: turquoise;
+    font-weight: bold;
+}
+
+body form a:link{
+    color: darkturquoise;
+}
+
+body form a:visited{
+    color: darkturquoise;
+}
+
+body form a:active{
+    color: darkturquoise;
+}
+
+body form a:hover{
+    color: rgb(208, 255, 0);
+}
